@@ -1,0 +1,93 @@
+ body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     margin: 0;
+     background-color: #f0f0f0;
+ }
+
+ .loader-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .loader {
+     width: 120px;
+     height: 24px;
+     margin-bottom: 3px;
+     -webkit-mask:
+         radial-gradient(circle closest-side, yellow 94%, #0000) 0 0/25% 100%,
+         linear-gradient(yellow 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
+     mask:
+         radial-gradient(circle closest-side, yellow 94%, #0000) 0 0/25% 100%,
+         linear-gradient(yellow 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
+     background: linear-gradient(green 0 0) left/0% 100% no-repeat yellow;
+     animation: fillElement 5s infinite linear;
+ }
+
+ .text {
+     font-size: 20px;
+     font-weight: bold;
+     margin-top: 3px;
+     color: blue;
+     display: inline-block;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: 400;
+     position: relative;
+ }
+
+ .text:before {
+     content: '';
+     animation: 5s print linear infinite;
+ }
+
+ @keyframes print {
+     0% {
+         content: 'G'
+     }
+
+     20% {
+         content: 'GD'
+     }
+
+     30% {
+         content: 'GDG '
+     }
+
+     40% {
+         content: 'GDG AL'
+     }
+
+     50% {
+         content: 'GDG ALGI'
+     }
+
+     60% {
+         content: 'GDG ALGIE'
+     }
+
+     70% {
+         content: 'GDG ALGIER'
+     }
+
+     80% {
+         content: 'GDG ALGIERS.'
+     }
+
+     90% {
+         content: 'GDG ALGIERS..'
+     }
+
+     100% {
+         content: 'GDG ALGIERS...'
+     }
+
+ }
+
+ @keyframes fillElement {
+     100% {
+         background-size: 100% 100%
+     }
+ }
